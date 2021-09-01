@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands, tasks
-from modules import canvas, json
+from modules import canvas, json, time
 
 class Canvas(commands.Cog):
     """Pulls Physics Department Announcements Feed from Canvas"""
@@ -24,17 +24,19 @@ class Canvas(commands.Cog):
         channel = self.client.get_channel(channel_id)
 
         info = canvas.get_info()
-        date = info[0]
+        date = time.convert_datetime_to_text(info[0])[2]
         title = info[2]
-
+        
         new = {
             "Date":date,
             "Title": title
             }
+
         old = json.load('events')
         if new != old:
-            json.edit('events',new)
-        print('done')
+            json.write('events',new)
+            embed = canvas.get_embed()
+            await channel.send(embed = embed)
         
 
 def setup(client):
