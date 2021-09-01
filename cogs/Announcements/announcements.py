@@ -20,7 +20,7 @@ class Canvas(commands.Cog):
     @tasks.loop(seconds= 60)
     async def check(self):
 
-        channel_id = 812754306712600607
+        channel_id = 882631183047991357
         channel = self.client.get_channel(channel_id)
 
         info = canvas.get_info()
