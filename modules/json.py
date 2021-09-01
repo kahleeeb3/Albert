@@ -15,7 +15,7 @@ def load(filename):
         a_file.close()
     return data
 
-def edit(filename, data):
+def write(filename, data):
     location = f'./modules/files/{filename}.json'
     a_file = open(f'{location}', "w")
     json.dump(data, a_file)
