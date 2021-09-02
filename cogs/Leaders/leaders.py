@@ -1,7 +1,6 @@
 import discord
 from discord.ext import commands
-from modules import leaders
-from modules.json import json
+from modules import leaders, json
 
 class Leaders(commands.Cog):
     """View the Leaders of the Group"""
@@ -14,7 +13,10 @@ class Leaders(commands.Cog):
         # creates the embed
         embed = leaders.get_embed(1)
         # upload file to embed
-        file = discord.File("/home/pi/Desktop/Discord/modules/Photos/tmpe0jswp88.png", filename="image.png")
+        
+        filename = json.load('leaders')["menu"]["1"]["Image"]
+        path = f"/home/pi/Desktop/Albert/modules/LeaderPhotos/{filename}"
+        file = discord.File(path, filename="image.png")
         embed.set_image(url="attachment://image.png")
         menu = await ctx.send(file=file, embed=embed)
         #menu = await ctx.send(embed=embed)
