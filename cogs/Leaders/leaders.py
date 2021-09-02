@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-from modules import leaders, json
+from modules import leaders, json, menus
 
 class Leaders(commands.Cog):
     """View the Leaders of the Group"""
@@ -14,22 +14,36 @@ class Leaders(commands.Cog):
         embed = leaders.get_embed(1)
         # upload file to embed
         
-        filename = json.load('leaders')["menu"]["1"]["Image"]
-        path = f"/home/pi/Desktop/Albert/modules/LeaderPhotos/{filename}"
-        file = discord.File(path, filename="image.png")
-        embed.set_image(url="attachment://image.png")
-        menu = await ctx.send(file=file, embed=embed)
-        #menu = await ctx.send(embed=embed)
-        """
+        # Add Image File
+        menu = await ctx.send(embed=embed)
         # add the reactions
-        await menus.add_emojis(menu, 1)
+        await menu.add_reaction('▶')
         # change the role menu id
-        menus.change_id(menu.id)
-        """
+        data = json.load('leaders')
+        data["message_id"] = menu.id
+        json.write('leaders',data)
 
 
     @commands.Cog.listener()
     async def on_raw_reaction_add(self, payload):
+
+        async def flip_right(bot,payload):
+            # get menu number
+            channel = bot.get_channel(payload.channel_id)
+            msg = await channel.fetch_message(payload.message_id)
+            embed = msg.embeds[0]
+            current = int(embed.title[0])
+            try:
+                embed2 = leaders.get_embed(current + 1)
+                current = current + 1
+            except:
+                embed2 = leaders.get_embed(1)
+                current = 1
+            await msg.clear_reactions()
+            await msg.edit(embed=embed2)
+            # add the reactions
+            await msg.add_reaction('▶')
+
 
         # Gets the information from reaction
         information = menus.get(payload)
@@ -42,22 +56,12 @@ class Leaders(commands.Cog):
             pass
         else:
             # checks if its from the correct message id
-            if menus.check_message_id(message_id):
+            data = json.load('leaders')
+            correct_message_id = data["message_id"]
+            if message_id == correct_message_id:
                 #check if reaction is ◀ or ▶
                 if emoji.name == '▶':
-                    await menus.flip_right(self.client, payload)
-
-                else:
-                    # get the current menu number
-                    msg = await menus.get_msg(self.client, payload)
-                    menu_num = msg.embeds[0].title[0]
-                    # find the matching role
-                    role_id = menus.get_role_id(menu_num, emoji)
-                    role = msg.guild.get_role(role_id)
-                    if role in user.roles:
-                        await user.remove_roles(role)
-                    else:
-                        await user.add_roles(role)
+                    await flip_right(self.client, payload)
                         
 def setup(client):
     client.add_cog(Leaders(client))

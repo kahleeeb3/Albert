@@ -1,11 +1,17 @@
 {
-    "message_id": 882808509098496074,
+    "message_id": 883070207290146877,
     "menu": {
         "1": {
-            "Name":"Will Lillis",
+            "Name": "Will Lillis",
             "Positions": "President, Vice President, Secretary,Treasurer",
             "Statement": "I believe my previous experience serving in the SPS will aid me in any of the three leadership positions in the club. Furthermore, I also have served as treasurer for the YAF club, familiarizing myself with the p card process among other treasurer duties. ",
-            "Image":"Will Lillis.PNG"
+            "Image": "https://github.com/kahleeeb3/Albert/blob/main/modules/LeaderPhotos/Will%20Lillis.PNG?raw=true"
+        },
+        "2": {
+            "Name": "This Could be You!",
+            "Positions": "President",
+            "Statement": "Please apply at https://tinyurl.com/PhysicsStud",
+            "Image": "https://fertilitynetworkuk.org/wp-content/uploads/2017/01/Facebook-no-profile-picture-icon-620x389.jpg"
         }
     }
 }

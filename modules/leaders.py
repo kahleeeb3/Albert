@@ -24,8 +24,10 @@ def get_embed(number:int):
     name = data["menu"][f"{number}"]["Name"]
     position = data["menu"][f"{number}"]["Positions"]
     description = data["menu"][f"{number}"]["Statement"]
+    image = data["menu"][f"{number}"]["Image"]
 
-    embed = discord.Embed(title=f'{name}',description = description,color=discord.Color.red())
+    embed = discord.Embed(title=f'{number}.{name}',description = description,color=discord.Color.red())
+    embed.set_image(url=image)
     embed.set_author(name = position)
     
     """
