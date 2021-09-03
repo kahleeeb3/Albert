@@ -1,5 +1,5 @@
 {
-    "message_id": 883070207290146877,
+    "message_id": 883071797065560124,
     "menu": {
         "1": {
             "Name": "Will Lillis",
@@ -8,6 +8,12 @@
             "Image": "https://github.com/kahleeeb3/Albert/blob/main/modules/LeaderPhotos/Will%20Lillis.PNG?raw=true"
         },
         "2": {
+            "Name": "Andrew Rippy",
+            "Positions": "President, Vice President",
+            "Statement": "I feel with the relationship that me (or any of the seniors) have with the physics department, as well as our previous involvement with the club before COVID killed everything, would be a good basis to kick start the club once again, and get it ready to be passed on to the next generation of physics students. ",
+            "Image": "https://fertilitynetworkuk.org/wp-content/uploads/2017/01/Facebook-no-profile-picture-icon-620x389.jpg"
+        },
+        "3": {
             "Name": "This Could be You!",
             "Positions": "President",
             "Statement": "Please apply at https://tinyurl.com/PhysicsStud",
