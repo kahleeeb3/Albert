@@ -14,6 +14,18 @@
             "Image":"https://github.com/kahleeeb3/Albert/blob/main/modules/LeaderPhotos/Rippy%20Andrew.jpg?raw=true"
         },
         "3": {
+            "Name": "Caleb Powell",
+            "Positions": "President, Vice President, Secretary",
+            "Statement": "I feel that I would be a good fit for this postion as I am very active within the physics department already. As a QSC tutor, a past 109 SI, a Senior Physics Major, and past member of the SPS, I have demonstated my ability to dedicate time while being proficient in my use of that time. I am very passionate about the club and would love to see it become something great after this period of drought.",
+            "Image":"https://github.com/kahleeeb3/Albert/blob/main/modules/LeaderPhotos/Caleb%20Powell.jpg?raw=true"
+        },
+        "4": {
+            "Name": "Joey Forchetti",
+            "Positions": "Secretary",
+            "Statement": "I’m a senior in the physics department and I have held positions in college mentors for kids. I am very organized and am willing to help to try and get SPS restarted.",
+            "Image": ""
+        },
+        "5": {
             "Name": "This Could be You!",
             "Positions": "President",
             "Statement": "Please apply at https://tinyurl.com/PhysicsStud",
