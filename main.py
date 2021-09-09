@@ -25,7 +25,7 @@ for folder in os.listdir('/home/pi/Desktop/Albert/cogs'):
 @client.event
 async def on_ready():
     print('Bot is ready')
-    await client.change_presence(activity=discord.Game(f'Epic Physics Stuff'))
+    await client.change_presence(activity=discord.Game(f'with Simulations'))
 
  
 # place token code in the following directory

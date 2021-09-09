@@ -16,7 +16,6 @@ def write(filename, data):
     json.dump(data, a_file)
     a_file.close()
 
-
 def get_embed(number:int):
     # loads in the data
     data = load()
@@ -72,7 +71,7 @@ def get(payload):
     return {'user': user,'message_id': message_id, 'emoji': emoji}
 
 def check_message_id(message_id):
-# checks if the reaction was added to the role menu
+    # checks if the reaction was added to the role menu
     # loads in the data
     data = load()
     correct_message_id = data["message_id"]

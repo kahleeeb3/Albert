@@ -10,7 +10,7 @@ class Kill(commands.Cog):
 
     def __init__(self, client):
         self.client = client
-
+        
     @commands.command()
     async def t(self, ctx, *, command):
         """Run Terminal Commands"""
