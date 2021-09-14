@@ -1,2 +1,16 @@
-To https://github.com/kahleeeb3/Discord.git
-   8274f56..476b259  main -> main
+Starting Bot...
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/discord/ext/commands/bot.py", line 612, in _load_from_module_spec
+    setup = getattr(lib, 'setup')
+AttributeError: module 'cogs.Scores.scores' has no attribute 'setup'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 23, in <module>
+    client.load_extension(f'cogs.{folder}.{filename[:-3]}')
+  File "/usr/local/lib/python3.7/dist-packages/discord/ext/commands/bot.py", line 678, in load_extension
+    self._load_from_module_spec(spec, name)
+  File "/usr/local/lib/python3.7/dist-packages/discord/ext/commands/bot.py", line 615, in _load_from_module_spec
+    raise errors.NoEntryPointError(key)
+discord.ext.commands.errors.NoEntryPointError: Extension 'cogs.Scores.scores' has no 'setup' function.

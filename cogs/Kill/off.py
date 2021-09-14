@@ -12,44 +12,20 @@ class Kill(commands.Cog):
         self.client = client
         
     @commands.command()
-    async def t(self, ctx, *, command):
-        """Run Terminal Commands"""
-        output = str(subprocess.check_output(command, shell=True))
-        output = output.replace("b\'","").replace("\\n\'","").replace("\\n","\n")[0:2000]
-        if 'cat' in command:
-            output = output.replace('\\r','')
-            output = (f"```python\n{output}\n```").replace('\\','')
-        await ctx.channel.send(f'{output}')
+    async def clean(self,ctx, amount:int):
+        """deletes a set number of messages"""
+        deleted= await ctx.channel.purge(limit = amount+1) #clears the messages + the command message
+        cleanMessage = await ctx.send(f'Cleared {len(deleted)-1} messages') #returns the number of messages deleted minus the command message
+        await cleanMessage.delete(delay = 3)
 
     @commands.command()
     async def github(self, ctx, *, message):
         """Pushes all the files to github repo"""
-        command = f'cd /home/pi/Desktop/Discord; git add --all; git commit -a -m "{message}";git push'
+        command = f'cd /home/pi/Desktop/Albert; git add --all; git commit -a -m "{message}";git push'
         output = str(subprocess.check_output(command, shell=True))
         output = output.replace("b\'","").replace("\\n\'","").replace("\\n","\n")[0:2000]
         await ctx.channel.send(f'{output}')
 
-    """
-    @commands.command()
-    async def timeout(self, ctx, *max_time):
-        #Deletes all messages for a given period of time can pass in the amount of time as a variable `$timeout <time>`
-        import time
-
-        if not max_time:
-            max_time = 600
-        else:
-            max_time = max_time[0]
-
-        await ctx.channel.send(f'**Due to conflict:** Chat is disabled for {max_time} seconds')
-
-        start_time = time.time()  # remember when we started
-        while (time.time() - start_time) < int(max_time):
-            thing = await self.client.wait_for('message')
-            await thing.delete()
-
-        await ctx.channel.send(f'Chat is enabled. Please be friends.')
-    """
-    
     @commands.command()
     async def off(self, ctx):
         """Turns the Bot off"""
