@@ -8,6 +8,7 @@ class Points(commands.Cog):
     def __init__(self, client):
         self.client = client
 
+    
     @commands.Cog.listener()
     async def on_raw_reaction_add(self, payload):
         if payload.emoji.name == '✅' or payload.emoji.name == '❌':
@@ -82,8 +83,6 @@ class Points(commands.Cog):
                     for n in range(len(roles[x].members)):
                         giveGC(roles[x].members[n].name)
                     await ctx.send(f'Giving 1 GC to {roles[x].mention}')
-        else:
-            await ctx.send('You dont have permission to do this')
 
 def setup(client):
     client.add_cog(Points(client))
