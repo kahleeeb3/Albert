@@ -36,7 +36,10 @@ class Points(commands.Cog):
 
     
     @commands.command()
-    async def gc(self,ctx,*request):
+    async def gc(self,ctx,*options):
+        """
+        Handles the Currency of the CSC Club
+        """
 
         def loadGC(user):
             data = json.load('points')
@@ -46,42 +49,66 @@ class Points(commands.Cog):
                 points = 0
             return points
 
-        def giveGC(user):
+        def giveGC(user,add):
             data = json.load('points')
             try:
                 points = data[f"{user}"]
             except:
                 points = 0
 
-            data[f"{user}"] = points+1
+            data[f"{user}"] = points+add
             json.write('points', data)
 
+        user = ctx.message.author.name # The Person running the command
+        targets = ctx.message.mentions # The person(s) mentioned in the command
+        roles = ctx.message.role_mentions # The Roles mentioned in the command
 
-        user = ctx.message.author.name
-        targets = ctx.message.mentions
-        roles = ctx.message.role_mentions
+        """
+        $gc                     Gives user their balance
+        $gc balance <user(s)>
+        $gc <user(s)>           Gives <user(s)> 1 GC
+        $gc <value> <user(s)>   Gives <user(s)> <value> GC's
+        """
+    # Checking Gentleman Coins
+        # for yourself
+        if not options:
+            curr = loadGC(user)
+            await ctx.send(f'{user} has {curr} GC(s)')
+        # for another user
+        elif options[0].lower() == 'balance':
 
-        # Show your number of GCs
-        if not request:
-            balance = loadGC(user)
-            await ctx.send(f'{user} has {balance} GCs')
-
-        
-        if len(request) > 1:
-            if request[0] == 'balance':
-                balance = loadGC(targets[0].name)
-                await ctx.send(f'{targets[0]} has {balance} GCs')
-
-        elif user == 'CalebP':
             if len(targets) > 0:
-                for x in range(len(targets)):
-                    giveGC(targets[x].name)
-                    await ctx.send(f'Giving 1 GC to {targets[x].name}')
+                for i in range(len(targets)):
+                    n = targets[i].name
+                    curr = loadGC(n)
+                    await ctx.send(f'{n} has {curr} GC(s)')
 
             if len(roles) > 0:
                 for x in range(len(roles)):
                     for n in range(len(roles[x].members)):
-                        giveGC(roles[x].members[n].name)
+                        curr = loadGC(roles[x].members[n].name)
+                        await ctx.send(f'{roles[x].members[n].name} has {curr} GC(s)')
+
+    # Giving Gentleman Coins
+        elif user == 'CalebP': # Only CalebP can do this
+            try:
+                value = int(options[0]) # See if quantity is given
+            except:
+                value = 1 # if not given, say it's 1
+
+            # For Users
+            if len(targets) > 0:
+                for i in range(len(targets)):
+                    n = targets[i].name
+                    giveGC(n,value)
+                    curr = loadGC(n)
+                    await ctx.send(f'Giving {value} GC to {n}. New Total: {curr}')
+            
+            # For Roles
+            if len(roles) > 0:
+                for x in range(len(roles)):
+                    for n in range(len(roles[x].members)):
+                        giveGC(roles[x].members[n].name,value)
                     await ctx.send(f'Giving 1 GC to {roles[x].mention}')
 
 def setup(client):
