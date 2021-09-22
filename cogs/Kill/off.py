@@ -21,7 +21,7 @@ class Kill(commands.Cog):
     @commands.command()
     async def github(self, ctx, *, message):
         """Pushes all the files to github repo"""
-        command = f'cd /home/pi/Desktop/Albert; git add --all; git commit -a -m "{message}";git push'
+        command = f'cd /home/pi/Desktop/CSC-Club; git add --all; git commit -a -m "{message}";git push'
         output = str(subprocess.check_output(command, shell=True))
         output = output.replace("b\'","").replace("\\n\'","").replace("\\n","\n")[0:2000]
         await ctx.channel.send(f'{output}')

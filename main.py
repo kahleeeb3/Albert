@@ -10,13 +10,13 @@ client = commands.Bot(command_prefix = '$', intents=intents)
 
 
 # loads all folders within the cogs folder
-for folder in os.listdir('/home/pi/Desktop/Albert/cogs'):
+for folder in os.listdir('/home/pi/Desktop/CSC-Club/cogs'):
     # ignores the cache folder
     if folder == '__pycache__':
         pass
     else:
         # loads all files in folder
-        for filename in os.listdir(f'/home/pi/Desktop/Albert/cogs/{folder}'):
+        for filename in os.listdir(f'/home/pi/Desktop/CSC-Club/cogs/{folder}'):
             #if its a python folder:
             if filename.endswith('.py'):
                 #create a cog with the files in that folder
@@ -29,4 +29,4 @@ async def on_ready():
 
  
 # place token code in the following directory
-client.run(open('/home/pi/Desktop/token-albert.txt', "r").read())
+client.run(open('/home/pi/Desktop/csc-token.txt', "r").read())

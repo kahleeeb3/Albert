@@ -3,6 +3,6 @@
 # navigate to home directory, then to this directory, then execute python script, then back home
 
 cd /
-cd home/pi/Desktop/Albert
+cd home/pi/Desktop/CSC-Club
 sudo python3 main.py
 cd /

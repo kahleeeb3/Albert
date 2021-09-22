@@ -1,2 +1,1 @@
-To https://github.com/kahleeeb3/Albert.git
-   fcb7a20..374d4bc  main -> main
+/bin/sh: 1: cd: can't cd to /home/pi/Desktop/Albert
