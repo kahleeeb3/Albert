@@ -25,6 +25,7 @@ class Kill(commands.Cog):
         output = str(subprocess.check_output(command, shell=True))
         output = output.replace("b\'","").replace("\\n\'","").replace("\\n","\n")[0:2000]
         await ctx.channel.send(f'{output}')
+        await ctx.send('test')
 
     @commands.command()
     async def off(self, ctx):

@@ -1,1 +1,4 @@
 /bin/sh: 1: cd: can't cd to /home/pi/Desktop/Albert
+To https://github.com/kahleeeb3/CSC-Club.git
+   7f0d437..20c2ead  main -> main
+/bin/sh: 1: cd: can't cd to /home/pi/Desktop/Albert
