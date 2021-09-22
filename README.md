@@ -1,9 +1,6 @@
-# Albert
-Albert was created on 09/01/2021 and is used as a means of maintaining the SPS discord server for Wabash College.
-## Commands
-### $canvas
-This command will allow you to pull the latest canvas announcement from the Wabash Physics page. This will automatically be posted in the #announcements channel when new posts are made.
-### $leadermenu
-Displays a list of all the leaders and synopsis.
-### $github
-coming soon.
+# Wabash Computer Science Discord Bot
+This was created on 09/01/2021 as a means of maintaining the Computer Science Club Discord Server for Wabash College.
+## How to Run
+## Setup
+This tutorial assumes you have a [Raspberry Pi Zero W](https://www.raspberrypi.org/products/raspberry-pi-zero-w/) with Raspberry Pi OS installed with the included software.
+1. Navigate to the Desktop
