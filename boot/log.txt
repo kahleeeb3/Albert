@@ -1,93 +1,3 @@
-To https://github.com/kahleeeb3/Albert.git
-   f7bf68a..e1ba16d  main -> main
-Ignoring exception in on_raw_reaction_add
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.7/dist-packages/discord/client.py", line 343, in _run_event
-    await coro(*args, **kwargs)
-  File "/home/pi/Desktop/Albert/cogs/rolemenu/workshop.py", line 26, in on_raw_reaction_add
-    await user.add_roles(role)
-  File "/usr/local/lib/python3.7/dist-packages/discord/member.py", line 777, in add_roles
-    await req(guild_id, user_id, role.id, reason=reason)
-AttributeError: 'NoneType' object has no attribute 'id'
-Unhandled exception in internal background task 'check'.
-Traceback (most recent call last):
-  File "/usr/lib/python3.7/xml/etree/ElementTree.py", line 1630, in feed
-    self.parser.Parse(data, 0)
-xml.parsers.expat.ExpatError: mismatched tag: line 14, column 2
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.7/dist-packages/atoma/utils.py", line 33, in parse_xml
-    return defused_xml_parse(xml_content)
-  File "/usr/local/lib/python3.7/dist-packages/defusedxml/common.py", line 100, in parse
-    return _parse(source, parser)
-  File "/usr/lib/python3.7/xml/etree/ElementTree.py", line 1197, in parse
-    tree.parse(source, parser)
-  File "/usr/lib/python3.7/xml/etree/ElementTree.py", line 604, in parse
-    parser.feed(data)
-  File "/usr/lib/python3.7/xml/etree/ElementTree.py", line 1632, in feed
-    self._raiseerror(v)
-  File "/usr/lib/python3.7/xml/etree/ElementTree.py", line 1531, in _raiseerror
-    raise err
-  File "<string>", line None
-xml.etree.ElementTree.ParseError: mismatched tag: line 14, column 2
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.7/dist-packages/discord/ext/tasks/__init__.py", line 101, in _loop
-    await self.coro(*args, **kwargs)
-  File "/home/pi/Desktop/Albert/cogs/Announcements/announcements.py", line 26, in check
-    info = canvas.get_info()
-  File "/home/pi/Desktop/Albert/modules/canvas.py", line 10, in get_info
-    feed = atoma.parse_atom_bytes(response.content)
-  File "/usr/local/lib/python3.7/dist-packages/atoma/atom.py", line 282, in parse_atom_bytes
-    root = parse_xml(BytesIO(data)).getroot()
-  File "/usr/local/lib/python3.7/dist-packages/atoma/utils.py", line 35, in parse_xml
-    raise FeedXMLError('Not a valid XML document')
-atoma.exceptions.FeedXMLError: Not a valid XML document
-Task exception was never retrieved
-future: <Task finished coro=<Loop._loop() done, defined at /usr/local/lib/python3.7/dist-packages/discord/ext/tasks/__init__.py:88> exception=FeedXMLError('Not a valid XML document')>
-Traceback (most recent call last):
-  File "/usr/lib/python3.7/xml/etree/ElementTree.py", line 1630, in feed
-    self.parser.Parse(data, 0)
-xml.parsers.expat.ExpatError: mismatched tag: line 14, column 2
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.7/dist-packages/atoma/utils.py", line 33, in parse_xml
-    return defused_xml_parse(xml_content)
-  File "/usr/local/lib/python3.7/dist-packages/defusedxml/common.py", line 100, in parse
-    return _parse(source, parser)
-  File "/usr/lib/python3.7/xml/etree/ElementTree.py", line 1197, in parse
-    tree.parse(source, parser)
-  File "/usr/lib/python3.7/xml/etree/ElementTree.py", line 604, in parse
-    parser.feed(data)
-  File "/usr/lib/python3.7/xml/etree/ElementTree.py", line 1632, in feed
-    self._raiseerror(v)
-  File "/usr/lib/python3.7/xml/etree/ElementTree.py", line 1531, in _raiseerror
-    raise err
-  File "<string>", line None
-xml.etree.ElementTree.ParseError: mismatched tag: line 14, column 2
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.7/dist-packages/discord/ext/tasks/__init__.py", line 125, in _loop
-    raise exc
-  File "/usr/local/lib/python3.7/dist-packages/discord/ext/tasks/__init__.py", line 101, in _loop
-    await self.coro(*args, **kwargs)
-  File "/home/pi/Desktop/Albert/cogs/Announcements/announcements.py", line 26, in check
-    info = canvas.get_info()
-  File "/home/pi/Desktop/Albert/modules/canvas.py", line 10, in get_info
-    feed = atoma.parse_atom_bytes(response.content)
-  File "/usr/local/lib/python3.7/dist-packages/atoma/atom.py", line 282, in parse_atom_bytes
-    root = parse_xml(BytesIO(data)).getroot()
-  File "/usr/local/lib/python3.7/dist-packages/atoma/utils.py", line 35, in parse_xml
-    raise FeedXMLError('Not a valid XML document')
-atoma.exceptions.FeedXMLError: Not a valid XML document
 Unhandled exception in internal background task 'check'.
 Traceback (most recent call last):
   File "/usr/local/lib/python3.7/dist-packages/discord/ext/tasks/__init__.py", line 101, in _loop
@@ -95,10 +5,7 @@ Traceback (most recent call last):
   File "/home/pi/Desktop/Albert/cogs/Announcements/announcements.py", line 39, in check
     await channel.send(embed = embed)
 AttributeError: 'NoneType' object has no attribute 'send'
-Ignoring exception in command None:
-discord.ext.commands.errors.CommandNotFound: Command "jail" is not found
 Starting Bot...
-Bot is ready
 Bot is ready
 Task exception was never retrieved
 future: <Task finished coro=<Loop._loop() done, defined at /usr/local/lib/python3.7/dist-packages/discord/ext/tasks/__init__.py:88> exception=AttributeError("'NoneType' object has no attribute 'send'")>
@@ -111,7 +18,7 @@ Traceback (most recent call last):
     await channel.send(embed = embed)
 AttributeError: 'NoneType' object has no attribute 'send'
 _ClientEventTask exception was never retrieved
-future: <ClientEventTask state=finished event=on_message coro=<bound method BotBase.on_message of <discord.ext.commands.bot.Bot object at 0xb6650130>> exception=SystemExit(None)>
+future: <ClientEventTask state=finished event=on_message coro=<bound method BotBase.on_message of <discord.ext.commands.bot.Bot object at 0xb66a6130>> exception=SystemExit(None)>
 Traceback (most recent call last):
   File "/usr/local/lib/python3.7/dist-packages/discord/client.py", line 713, in run
     loop.run_forever()

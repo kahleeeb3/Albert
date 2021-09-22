@@ -8,18 +8,34 @@ class Points(commands.Cog):
     def __init__(self, client):
         self.client = client
 
+    @commands.command()
+    async def export(self,ctx):
+        roles = ctx.message.role_mentions # The Roles mentioned in the command
+        mystring = ''
+        if len(roles) > 0:
+                for x in range(len(roles)):
+                    name = roles[x].name
+                    mystring = mystring + f'{name}\n'
+                    for i in range(len(roles[x].members)):
+                        name = roles[x].members[i].name
+                        mystring = mystring + f'{i+1}) {name}\n'
+                await ctx.send(mystring)
     
     @commands.Cog.listener()
     async def on_raw_reaction_add(self, payload):
-        if payload.emoji.name == '✅' or payload.emoji.name == '❌':
-            if payload.channel_id == 885317697515188264:
+        channels = {
+            "announcements":885317697515188264,
+            "voting":887342368293003374
+        }
+        for x in channels:
+            if payload.channel_id == channels[x]:
 
                 channel = self.client.get_channel(payload.channel_id)
                 msg = await channel.fetch_message(payload.message_id)
-
                 user = payload.member
-                role = msg.guild.get_role(887140579253817374)
-                await user.add_roles(role)
+
+                role = msg.guild.get_role(887140579253817374) # get gentleman role
+                await user.add_roles(role) # add gentleman role
 
     @commands.command()
     async def clearrole(self,ctx):
