@@ -1,6 +1,0 @@
-To https://github.com/kahleeeb3/CSC-Club.git
-   0c0c4cb..92b2056  main -> main
-To https://github.com/kahleeeb3/CSC-Club.git
-   92b2056..a1a3072  main -> main
-To https://github.com/kahleeeb3/CSC-Club.git
-   a1a3072..cc3e13e  main -> main
