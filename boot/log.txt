@@ -6,3 +6,5 @@ To https://github.com/kahleeeb3/CSC-Club.git
    b8e62c9..628519b  main -> main
 To https://github.com/kahleeeb3/CSC-Club.git
    628519b..88f2f99  main -> main
+To https://github.com/kahleeeb3/CSC-Club.git
+   88f2f99..0e73c38  main -> main
