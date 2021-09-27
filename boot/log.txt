@@ -1,50 +1,164 @@
-To https://github.com/kahleeeb3/CSC-Club.git
-   79a061a..afe9d32  main -> main
-To https://github.com/kahleeeb3/CSC-Club.git
-   afe9d32..b8e62c9  main -> main
-To https://github.com/kahleeeb3/CSC-Club.git
-   b8e62c9..628519b  main -> main
-To https://github.com/kahleeeb3/CSC-Club.git
-   628519b..88f2f99  main -> main
-To https://github.com/kahleeeb3/CSC-Club.git
-   88f2f99..0e73c38  main -> main
-To https://github.com/kahleeeb3/CSC-Club.git
-   0e73c38..18ac253  main -> main
-To https://github.com/kahleeeb3/CSC-Club.git
-   18ac253..55351bc  main -> main
-To https://github.com/kahleeeb3/CSC-Club.git
-   55351bc..701034e  main -> main
-To https://github.com/kahleeeb3/CSC-Club.git
-   701034e..26cabf5  main -> main
-To https://github.com/kahleeeb3/CSC-Club.git
-   26cabf5..c4f795c  main -> main
-Starting Bot...
-Bot is ready
-_ClientEventTask exception was never retrieved
-future: <ClientEventTask state=finished event=on_message coro=<bound method BotBase.on_message of <discord.ext.commands.bot.Bot object at 0xb6695130>> exception=SystemExit(None)>
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.7/dist-packages/discord/client.py", line 713, in run
-    loop.run_forever()
-  File "/usr/lib/python3.7/asyncio/base_events.py", line 539, in run_forever
-    self._run_once()
-  File "/usr/lib/python3.7/asyncio/base_events.py", line 1775, in _run_once
-    handle._run()
-  File "/usr/lib/python3.7/asyncio/events.py", line 88, in _run
-    self._context.run(self._callback, *self._args)
-  File "/usr/local/lib/python3.7/dist-packages/discord/client.py", line 343, in _run_event
-    await coro(*args, **kwargs)
-  File "/usr/local/lib/python3.7/dist-packages/discord/ext/commands/bot.py", line 979, in on_message
-    await self.process_commands(message)
-  File "/usr/local/lib/python3.7/dist-packages/discord/ext/commands/bot.py", line 976, in process_commands
-    await self.invoke(ctx)
-  File "/usr/local/lib/python3.7/dist-packages/discord/ext/commands/bot.py", line 939, in invoke
-    await ctx.command.invoke(ctx)
-  File "/usr/local/lib/python3.7/dist-packages/discord/ext/commands/core.py", line 863, in invoke
-    await injected(*ctx.args, **ctx.kwargs)
-  File "/usr/local/lib/python3.7/dist-packages/discord/ext/commands/core.py", line 85, in wrapped
-    ret = await coro(*args, **kwargs)
-  File "/home/pi/Desktop/CSC-Club/cogs/Kill/off.py", line 34, in off
-    exit()
-  File "/usr/lib/python3.7/_sitebuiltins.py", line 26, in __call__
-    raise SystemExit(code)
-SystemExit: None
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "test" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "test" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "test" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "test" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "test" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "test" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "test" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "test" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "test" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "test" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "test" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "test" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "test" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "test" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "test" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "test" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "test" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "test" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "test" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "test" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "test" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "test" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "test" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:
+discord.ext.commands.errors.CommandNotFound: Command "miss" is not found
+Ignoring exception in command None:fatal: Unable to create '/home/pi/Desktop/CSC-Club/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+fatal: Unable to create '/home/pi/Desktop/CSC-Club/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
