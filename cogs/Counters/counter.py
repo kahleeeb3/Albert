@@ -12,6 +12,11 @@ class Counter(commands.Cog):
     async def miss(self, ctx, user, *option):
         """$<counter> <user> <list/reset/retract/null>"""
         await counter("Miss",option,self, ctx)
+
+    @commands.command()
+    async def late(self, ctx, user, *option):
+        """$<counter> <user> <list/reset/retract/null>"""
+        await counter("Late",option,self, ctx)
      
 def setup(client):
     client.add_cog(Counter(client))
