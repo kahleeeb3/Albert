@@ -7,16 +7,18 @@ import os
 # defines the prefix for all commands
 intents = discord.Intents.all()
 client = commands.Bot(command_prefix = '$', intents=intents)
+cog_folder = "/home/pi/Desktop/CSC-Club/cogs"
+#cog_folder = "/home/pi/Desktop/Discord/cogs"
 
 
 # loads all folders within the cogs folder
-for folder in os.listdir('/home/pi/Desktop/CSC-Club/cogs'):
+for folder in os.listdir(cog_folder):
     # ignores the cache folder
     if folder == '__pycache__':
         pass
     else:
         # loads all files in folder
-        for filename in os.listdir(f'/home/pi/Desktop/CSC-Club/cogs/{folder}'):
+        for filename in os.listdir(f'{cog_folder}/{folder}'):
             #if its a python folder:
             if filename.endswith('.py'):
                 #create a cog with the files in that folder
