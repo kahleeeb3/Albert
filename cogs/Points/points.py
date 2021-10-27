@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 from modules import json
+from modules.admins import check_admin
 
 class Points(commands.Cog):
     """View the Leaders of the Group"""
@@ -39,7 +40,7 @@ class Points(commands.Cog):
 
     @commands.command()
     async def clearrole(self,ctx):
-        if ctx.message.author.name == 'CalebP':
+        if await check_admin(ctx):
             roles = ctx.message.role_mentions
             for x in range(len(roles)):
                 while len(roles[x].members) > 0:
@@ -106,7 +107,7 @@ class Points(commands.Cog):
                         await ctx.send(f'{roles[x].members[n].name} has {curr} GC(s)')
 
     # Giving Gentleman Coins
-        elif user == 'CalebP': # Only CalebP can do this
+        elif await check_admin(ctx): # Only admins can do this
             try:
                 value = int(options[0]) # See if quantity is given
             except:
