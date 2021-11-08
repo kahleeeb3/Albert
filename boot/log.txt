@@ -1,0 +1,42 @@
+Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/discord/client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/pi/Desktop/CSC-Club/cogs/Attendance/rolecall.py", line 50, in on_message
+    await dm_channel.send(user_info)
+UnboundLocalError: local variable 'user_info' referenced before assignment
+Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/discord/client.py", line 343, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/pi/Desktop/CSC-Club/cogs/Attendance/rolecall.py", line 50, in on_message
+    await dm_channel.send(user_info)
+UnboundLocalError: local variable 'user_info' referenced before assignment
+Fatal read error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0xb17e2210>
+transport: <_SelectorSocketTransport fd=7 read=polling write=<idle, bufsize=0>>
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/asyncio/selector_events.py", line 801, in _read_ready__data_received
+    data = self._sock.recv(self.max_size)
+TimeoutError: [Errno 110] Connection timed out
+Fatal read error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0xb17e2990>
+transport: <_SelectorSocketTransport fd=7 read=polling write=<idle, bufsize=0>>
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/asyncio/selector_events.py", line 801, in _read_ready__data_received
+    data = self._sock.recv(self.max_size)
+TimeoutError: [Errno 110] Connection timed out
+Fatal read error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0xb17dd330>
+transport: <_SelectorSocketTransport fd=7 read=polling write=<idle, bufsize=0>>
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/asyncio/selector_events.py", line 801, in _read_ready__data_received
+    data = self._sock.recv(self.max_size)
+TimeoutError: [Errno 110] Connection timed out
+Fatal read error on socket transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0xb17d6310>
+transport: <_SelectorSocketTransport fd=7 read=polling write=<idle, bufsize=0>>
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/asyncio/selector_events.py", line 801, in _read_ready__data_received
+    data = self._sock.recv(self.max_size)
+TimeoutError: [Errno 110] Connection timed out
