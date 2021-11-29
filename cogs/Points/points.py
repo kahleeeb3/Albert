@@ -1,14 +1,45 @@
 import discord
-from discord.ext import commands
+from discord import embeds
+from discord import channel
+from discord import message
+from discord.ext import commands,tasks
 from modules import json
 from modules.admins import check_admin
+
+def get_embed(self):
+        data = json.load('points')
+        sorted_points = sorted(data.items(), key = lambda kv: kv[1]) # sort the data
+        num_people = 10  # the number of members to display (n)
+        top_members = sorted_points[-1*num_people:] # get the top n people
+        top_members = top_members[::-1] # reverse the list
+        scoreBoard_embed = discord.Embed(title = "GC LEADERBOARD", colour = 0xFFB900) # create discord embed
+        i = 1
+        for user in top_members:
+            if i == 1:
+                # Get the profile picture of the user that is in the lead
+                a = self.client.guilds
+                b = [(i.id == 881633300697985045) for i in a]
+                server = [x for x, y in zip(a,b) if y == True][0]
+                a = server.members
+                b = [(i.name == user[0]) for i in a]
+                winner_pic = [x for x, y in zip(a,b) if y == True][0].avatar_url
+
+                scoreBoard_embed.set_author(name = f'{i}. {user[0]} - {user[1]}', icon_url= winner_pic)
+            else:
+                scoreBoard_embed.add_field(name=f'{i}. {user[0]}',value=user[1],inline=True)
+            i+=1
+        return scoreBoard_embed
 
 class Points(commands.Cog):
     """View the Leaders of the Group"""
 
     def __init__(self, client):
         self.client = client
-
+    
+    @commands.Cog.listener()
+    async def on_ready(self):
+        self.check.start()
+    
     @commands.command()
     async def export(self,ctx):
         roles = ctx.message.role_mentions # The Roles mentioned in the command
@@ -127,6 +158,27 @@ class Points(commands.Cog):
                     for n in range(len(roles[x].members)):
                         giveGC(roles[x].members[n].name,value)
                     await ctx.send(f'Giving 1 GC to {roles[x].mention}')
+
+    @commands.command(aliases=['lb'])
+    async def leaderboard(self,ctx):
+        await ctx.message.delete()
+        embed = get_embed(self)
+        board = await ctx.send(embed= embed)
+        await ctx.send(board.id)
+        
+    
+    @tasks.loop(seconds= 30)
+    async def check(self):
+        a = self.client.guilds
+        b = [(i.id == 881633300697985045) for i in a]
+        server = [x for x, y in zip(a,b) if y == True][0]
+        data = json.load("config")
+        channel_id = data["Channels"]["about-us"]
+        channel = server.get_channel(channel_id)
+        board_id = data["Messages"]["leaderboard"]
+        board = await channel.fetch_message(board_id)
+        score_board = get_embed(self)
+        await board.edit(embed = score_board)
 
 def setup(client):
     client.add_cog(Points(client))
