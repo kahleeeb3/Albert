@@ -11,8 +11,14 @@ class RoleReactions(commands.Cog):
 
     @commands.command()
     async def rolemenu(self,ctx):
-        menu = await ctx.send('If you would like to be an active member please react with ✅')
-        await menu.add_reaction('✅')
+        if await check_admin(ctx): # check the the user is an admin
+            menu = await ctx.send('If you would like to participate in the main chat as an active member please react with ✅')
+            await menu.add_reaction('✅')
+
+            # assign the new menu id
+            data = json.load('config')
+            data["Messages"]["rolemenu"] = menu.id
+            json.write('config', data)
 
     @commands.command()
     async def classmenu(self,ctx,*input):
@@ -54,7 +60,7 @@ class RoleReactions(commands.Cog):
         channel_id = payload.channel_id
         message_id = payload.message_id
 
-        if emoji == "✅" and check_channel("welcome",channel_id):
+        if emoji == "✅" and check_message("rolemenu",message_id):
             output = await get_role("Active Members",self,payload)
             user,role = output["User"],output["Role"]
             await user.add_roles(role)
@@ -73,7 +79,7 @@ class RoleReactions(commands.Cog):
         channel_id = payload.channel_id
         message_id = payload.message_id
 
-        if emoji == "✅" and check_channel("welcome",channel_id):
+        if emoji == "✅" and check_message("rolemenu",message_id):
             output = await get_role("Active Members",self,payload)
             user,role = output["User"],output["Role"]
             await user.remove_roles(role)
