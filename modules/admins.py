@@ -23,6 +23,15 @@ def check_channel(correct_channel_name,channel_id):
     else:
         return False
 
+def check_message(correct_message_name,message_id):
+    config = load('config')
+    messages = config["Messages"]
+    correct_message_id = messages[correct_message_name]
+    if correct_message_id == message_id:
+        return True
+    else:
+        return False
+
 async def get_role(rolename,self,payload):
     config = load('config')
     roles = config["Roles"]

@@ -11,7 +11,7 @@ class Kill(commands.Cog):
         self.client = client
         
     @commands.command()
-    async def clean(self,ctx, amount:int):
+    async def clear(self,ctx, amount:int):
         """deletes a set number of messages"""
         if await check_admin(ctx):
             #clears the messages + the command message
